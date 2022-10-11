@@ -18,15 +18,12 @@ call plug#begin("~/.config/nvim/plugged")
   " Formater
   Plug 'Chiel92/vim-autoformat'
   Plug 'github/copilot.vim'
-  " Plug 'numToStr/Comment.nvim'
   Plug 'mattn/emmet-vim'
-  Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-"require('Comment').setup()
 " UI configuration
 syntax on
 syntax enable
