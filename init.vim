@@ -21,8 +21,17 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'mattn/emmet-vim'
   Plug 'honza/vim-snippets'
   Plug 'tpope/vim-fugitive'
-
+  " fuzzy finder
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " nerd commenter
+  Plug 'preservim/nerdcommenter'
 call plug#end()
+
+map <C-p> :FZF<CR>
+map <C-b> :Buffers<CR>
+map <C-f> :Files<CR>
+map <C-g> :GFiles<CR>
 
 " UI configuration
 syntax on
@@ -40,7 +49,7 @@ if has("gui_running")
   set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
 endif
 set number
-"set relativenumber
+set relativenumber
 set hidden
 set mouse=a
 set noshowmode
@@ -89,3 +98,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+
+" NERDCommenter
+let mapleader="." " change leader to .
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
